@@ -1,10 +1,38 @@
 ## How to Set up a Mac for React-Native Development
 
-Getting your computer set up for development in React-Native is no easy task.  To avoid endless googling, here are some guides to send you on your way.  I'm going to assume default paths for most things, and depending on the age of your machine, the operating system, etc some of these variables may change.
+Getting your computer set up for development in React-Native is no easy task.  To avoid endless googling, here are some guides to send you on your way.  I'm going to assume default paths for most things, and depending on the age of your machine, the operating system, etc some of these variables may change.  I am assuming you are on a Mac, as it isn't really possible to do full stack dev and deploy on a PC.  You can do react-native development for Android, but if you are going to run a cross platform app, you need a Mac.
 
-## x-Code
+## Create a react-native project
 
-From the Apple App Store, make sure you have x-Code installed.
+There are many different ways to do this, and that is not what this page is about.  Pick your poison.  
+
+```npx react-native init MyTestApp```
+
+That is probably the easiest - [full docs on React Native here](https://reactnative.dev/).
+
+## Xcode
+
+Open your terminal and type in
+
+```xcode-select —install```
+
+This should install Xcode command line tools - follow the prompts and grant necessary permissions.
+
+From the Apple App Store, make sure you have Xcode installed.
+
+Once you have installed it, open it, and open the .xcworkspace file that is in your app/ios folder.
+
+If you are asked to agree to terms, Agree.
+
+In the main menu, go to 
+
+Xcode > Preferences > Location and choose the command line tools installed.
+
+That is all you need to start.
+
+## Android Studio
+
+Download and install Android Studio.
 
 
 
