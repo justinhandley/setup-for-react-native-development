@@ -1,8 +1,12 @@
-## Welcome to GitHub Pages
+## How to Set up a Mac for React-Native Development
 
-You can use the [editor on GitHub](https://github.com/justinhandley/setup-for-react-native-development/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Getting your computer set up for development in React-Native is no easy task.  To avoid endless googling, here are some guides to send you on your way.  I'm going to assume default paths for most things, and depending on the age of your machine, the operating system, etc some of these variables may change.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## x-Code
+
+From the Apple App Store, make sure you have x-Code installed.
+
+
 
 ### Markdown
 
