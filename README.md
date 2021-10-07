@@ -96,6 +96,9 @@ Check that it is installed by running
 
 ```node -v```
 
+## Install Yarn
+
+```npm i yarn -g```
 
 ## Install Java
 
@@ -116,13 +119,14 @@ Scroll or down arrow all the way to the bottom of the file.
 
 Paste in the following code
 
-```export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+```console
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 
-# default to Java 11
+#default to Java 11
 java11
 ```
 
@@ -134,6 +138,9 @@ Make sure it is loading:
 
 ```java --version```
 
+## Install Reactotron
+
+```brew install reactotron```
 
 
 
