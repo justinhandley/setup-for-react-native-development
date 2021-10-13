@@ -6,7 +6,9 @@ Getting your computer set up for development in React-Native is no easy task.  T
 
 There are many different ways to do this, and that is not what this page is about.  Pick your poison.  
 
-```npx react-native init MyTestApp```
+```console
+npx react-native init MyTestApp
+```
 
 That is probably the easiest - [full docs on React Native here](https://reactnative.dev/).
 
@@ -14,7 +16,9 @@ That is probably the easiest - [full docs on React Native here](https://reactnat
 
 Open your terminal and type in
 
-```xcode-select —install```
+```console
+xcode-select —install
+```
 
 This should install Xcode command line tools - follow the prompts and grant necessary permissions.
 
@@ -54,66 +58,86 @@ I use [beeman's shell settings](https://github.com/beeman/server-shell)
 
 ```sh -c "$(curl -fsSL https://raw.github.com/beeman/server-shell/master/tools/install.sh)"```
 
-Restart your terminal.
+Restart your terminal or run ```source ~/.zshrc```
 
 ## Install Homebrew
 
 If you are on a new machine and haven't installed Homebrew run
 
-```ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
+```console
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 and / or update
 
-```brew update```
+```console
+brew update
+```
 
 ## Install Node Version Manager
 
 You will want to be able to easily switch between versions of node for different projects.
 
-```brew install nvm```
+```console
+brew install nvm
+```
 
 Once this is done, it will give you some code to copy into your ~/.zscrc file.
 
-```nano ~/.zshrc```
+```console
+nano ~/.zshrc
+```
 
 Scroll or down arrow all the way to the bottom of the file.
 
 Paste in the following code given to you in the installation script (it should look something like this)
 
-```
+```zsh
 export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
   ```
 
-Restart your terminal.
+Restart your terminal or run ```source ~/.zshrc```
 
 Then, install a node version or two
 
-```nvm install 15```
+```console
+nvm install 15
+```
 
 Check that it is installed by running
 
-```node -v```
+```console
+node -v
+```
 
 ## Install Yarn
 
-```npm i yarn -g```
+```console
+npm i yarn -g
+```
 
 ## Install Java
 
 We want to have multiple versions of java so as we develop over time we can easily switch between them.  I'm going to show you Java 8 and Java 11.  A lot of projects are on Java 8.  I'm currently using Java 11.  There are newer versions - you can explore at your own risk.
 
-```brew tap adoptopenjdk/openjdk```
+```console
+brew tap adoptopenjdk/openjdk
+```
 
 Then
 
-```brew install adoptopenjdk8```
-```brew install adoptopenjdk11```
+```console
+brew install adoptopenjdk8
+brew install adoptopenjdk11
+```
 
 We need to edit our command line now.  I'm going to use nano - if you prefer a different editor, fine.
 
-```nano ~/.zshrc```
+```console
+nano ~/.zshrc
+```
 
 Scroll or down arrow all the way to the bottom of the file.
 
@@ -132,14 +156,41 @@ java11
 
 Close out of nano and save.
 
-Restart your terminal. 
+Restart your terminal or run ```source ~/.zshrc```
 
 Make sure it is loading:
 
-```java --version```
+```console
+java --version
+```
 
 ## Install Reactotron
 
-```brew install reactotron```
+```console
+brew install reactotron
+```
 
+## Install Watchman
 
+```console
+brew install watchman
+```
+
+## Configure Android in Your Path
+
+If you want to be able to do run-android and have it auto launch a device, you need to also add the android SDKs to your path.
+
+```console
+nano ~/.zshrc
+```
+
+Scroll or down arrow all the way to the bottom of the file.
+
+Paste in the following code given to you in the installation script
+
+```console
+export ANDROID_HOME="$HOME/Library/Android/Sdk"
+export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin$
+```
+
+Restart your terminal or run ```source ~/.zshrc```
