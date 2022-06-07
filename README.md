@@ -48,6 +48,19 @@ Choose a device - I usually go with one with a Play Store logo so I have the pos
 
 Close Android Studio.
 
+## M1 Mac Android Studio Hack
+
+If you are on a M1 mac and it can't find node, you can open it from the command line with
+
+```console
+open -a /Applications/Android\ Studio.app  
+```
+
+and this also is supposed to be a permanent fix
+
+```console
+chmod +x /Applications/Android\ Studio.app/Contents/bin/printenv
+```
 ## Command Line
 
 Open Terminal.
@@ -72,6 +85,12 @@ and / or update
 
 ```console
 brew update
+```
+
+## Install CocoaPods
+
+```console
+sudo gem install cocoapods
 ```
 
 ## Install Node Version Manager
@@ -100,10 +119,10 @@ export NVM_DIR="$HOME/.nvm"
 
 Restart your terminal or run ```source ~/.zshrc```
 
-Then, install a node version or two
+Then, install a node version or two (change out for the latest version)
 
 ```console
-nvm install 15
+nvm install 16
 ```
 
 Check that it is installed by running
@@ -189,8 +208,11 @@ Scroll or down arrow all the way to the bottom of the file.
 Paste in the following code given to you in the installation script
 
 ```console
-export ANDROID_HOME="$HOME/Library/Android/Sdk"
-export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin$
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/emulator
 ```
 
 Restart your terminal or run ```source ~/.zshrc```
