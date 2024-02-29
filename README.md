@@ -24,7 +24,9 @@ This should install Xcode command line tools - follow the prompts and grant nece
 
 From the Apple App Store, make sure you have Xcode installed.
 
-Once you have installed it, open it, and open the .xcworkspace file that is in your app/ios folder.
+Once you have installed it, open it.  On the first open, it may ask if you want to install other operating systems.  Make sure you at least have a Mac and an IOS OS installed.  The download on this can take a bit of time.
+
+Then, open the .xcworkspace file that is in your app/ios folder.
 
 If you are asked to agree to terms, Agree.
 
@@ -32,11 +34,14 @@ In the main menu, go to
 
 Xcode > Preferences > Location and choose the command line tools installed.
 
+Xcode > Preferences > Accounts and log in with your Apple ID
 Close Xcode.
 
 ## Android Studio
 
 Download and install Android Studio.
+
+When you open it for the first time, agree to terms and install all the default settings.
 
 Open the folder app/android
 
@@ -78,10 +83,12 @@ Restart your terminal or run ```source ~/.zshrc```
 If you are on a new machine and haven't installed Homebrew run
 
 ```console
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-and / or update
+Once this is done, it will give you some code to copy into your terminal.  Execute it.
+
+If you already have Homebrew, just run:
 
 ```console
 brew update
@@ -90,15 +97,15 @@ brew update
 ## Install CocoaPods
 
 ```console
-sudo gem install cocoapods
+brew install cocoapods
 ```
 
-## Install Node Version Manager
+## Install ASDF
 
 You will want to be able to easily switch between versions of node for different projects.
 
 ```console
-brew install nvm
+brew install asdf
 ```
 
 Once this is done, it will give you some code to copy into your ~/.zscrc file.
@@ -107,73 +114,56 @@ Once this is done, it will give you some code to copy into your ~/.zscrc file.
 nano ~/.zshrc
 ```
 
-Scroll or down arrow all the way to the bottom of the file.
-
-Paste in the following code given to you in the installation script (it should look something like this)
-
-```zsh
-export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-  ```
-
 Restart your terminal or run ```source ~/.zshrc```
+
+Python has a dependency it needs, you can run 
+
+```console
+brew install readline xz
+```
 
 Then, install a node version or two (change out for the latest version)
 
 ```console
-nvm install 16
+asdf plugin add nodejs
+asdf plugin add pythong
+asdf install nodejs latest
+asdf install python latest
 ```
 
 Check that it is installed by running
 
 ```console
 node -v
+python -v
 ```
 
-## Install Yarn
+Then, take those versions and run
 
 ```console
-npm i yarn -g
+asdf global nodejs (version)
+asdf global python (version)
 ```
 
-## Install Java
-
-We want to have multiple versions of java so as we develop over time we can easily switch between them.  I'm going to show you Java 8 and Java 11.  A lot of projects are on Java 8.  I'm currently using Java 11.  There are newer versions - you can explore at your own risk.
+That sets global versions - you can then overwrite per project by using
 
 ```console
-brew tap adoptopenjdk/openjdk
+asdf local nodejs (version)
 ```
 
-Then
+## Install PNPM
 
 ```console
-brew install adoptopenjdk8
-brew install adoptopenjdk11
+brew install pnpm
 ```
 
-We need to edit our command line now.  I'm going to use nano - if you prefer a different editor, fine.
+## Install SDKMan and JAVA
 
 ```console
-nano ~/.zshrc
+ curl -s "https://get.sdkman.io" | bash
+ sdk install java 17.0.9-zulu
+ sdk use java 17.0.9-zulu
 ```
-
-Scroll or down arrow all the way to the bottom of the file.
-
-Paste in the following code
-
-```console
-export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
-
-alias java8='export JAVA_HOME=$JAVA_8_HOME'
-alias java11='export JAVA_HOME=$JAVA_11_HOME'
-
-#default to Java 11
-java11
-```
-
-Close out of nano and save.
 
 Restart your terminal or run ```source ~/.zshrc```
 
